@@ -1,0 +1,19 @@
+{
+  "name": "dtube",
+  "version": "1.0.0",
+  "description": "dTube addon for stremio",
+  "main": "index.js",
+  "author": "eraplusidea@gmail.com",
+  "license": "MIT",
+  "scripts": {"start": "node index.js"},
+  "dependencies": {
+    "asksteem": "0.0.7",
+    "request": "^2.83.0",
+    "steem": "^0.6.7",
+    "steemjs": "^1.0.4",
+    "stremio-addons": "^2.8.13"
+  },
+  "engines": {
+    "node": "8.9.1"
+  }
+}
