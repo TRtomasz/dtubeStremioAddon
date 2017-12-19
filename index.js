@@ -143,7 +143,7 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
     steemjs.api.setOptions({ url: 'wss://steemd-int.steemit.com' });
     steemjs.api.getAccounts(author, function(err,result){
         if(!err) {
-            if (results.length == 0)
+            if (result.length == 0)
                 return callback();
             for(var ii =0, jj = result.length; ii < jj; ii++) {
             var user = {};    
