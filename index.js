@@ -143,6 +143,8 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
     steemjs.api.setOptions({ url: 'wss://steemd-int.steemit.com' });
     steemjs.api.getAccounts(author, function(err,result){
         if(!err) {
+            if (results.length == 0)
+                return callback();
             for(var ii =0, jj = result.length; ii < jj; ii++) {
             var user = {};    
             var data = result[ii];
@@ -224,6 +226,7 @@ var addon = new Stremio.Server({
     },
     "meta.search": function(args, callback) {
         console.log("received request from meta.search", args)
+        if (! args.query) return callback();
         createChannelFromAuthorName([args.query],callback,true,true);
     },
 }, manifest);
