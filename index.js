@@ -14,7 +14,7 @@ var manifest = {
 
     name: "dTube",
      version: "1.0.0",
-    description: "dTube addon for stremio",
+    description: "dTube addon for stremio - monetize your videos with steem blockchain",
     //icon: "https://d.tube/DTube_files/images/dtubeplay.png",
     logo: "https://d.tube/DTube_files/images/dtubeplay.png",
     background: "https://image.ibb.co/buY5nw/Screenshot_3.png",
@@ -158,7 +158,7 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             user.background = 'https://img.busy.org/'+'@'+data.name+'/cover';
             user.website = "www.steemit.com/@"+data.name,
             user.genre = ["Entertainment"];
-            user.description = meta.profile.about;
+            user.description = "Visit me at " + "www.steemit.com/@"+data.name + " "+ meta.profile.about;
             user.isFree = 1;
             user.popularity = data.reputation;
             user.popularities = {dTube: data.reputation};
