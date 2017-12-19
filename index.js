@@ -24,9 +24,10 @@ var manifest = {
     idProperty: ["dtube_id"], // the property to use as an ID for your add-on; your add-on will be preferred for items with that property; can be an array
     // We need this for pre-4.0 Stremio, it's the obsolete equivalent of types/idProperty
     filter: { "query.dtube_id": { "$exists": true }, "query.type": { "$in": ["channel"] } },
-    endpoint : 'http://secret-anchorage-23982.herokuapp.com/stremioget/stremio/v1',
+    endpoint : "http://secret-anchorage-23982.herokuapp.com/stremioget/stremio/v1",
     // Adding a sort would add a tab in Discover and a lane in the Board for this add-on
-    sorts: [ {prop: "popularities.dtube", name: "dTube", types: ["channel"]}]
+    sorts: [ {prop: "popularities.dtube", name: "dTube", types: ["channel"]}],
+    isFree: true
 };
 
 var dataset = {
