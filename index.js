@@ -74,7 +74,7 @@ function getVideoByIdWithCallback(id,callback)
                                 thumbnail: 'https://dtube2.gateway.ipfsstore.it:8443/ipfs/'+videos[0].meta.video.info.snaphash,
                                 stream: 
                                 {
-                                    url: linkByHash(videos[0].meta.video.content.videohash),
+                                    url: videos[0].meta.video.content.video480hash ? linkByHash(videos[0].meta.video.content.video480hash) : linkByHash(videos[0].meta.video.content.videohash),
                                     name: videos[0].author,
                                     title: videos[0].title,
                                     isFree: true,
@@ -126,7 +126,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
                                 thumbnail: 'https://dtube2.gateway.ipfsstore.it:8443/ipfs/'+videos[i].meta.video.info.snaphash,
                                 stream: 
                                 {
-                                    url: 'https://dtube1.gateway.ipfsstore.it:8443/ipfs/'+videos[i].meta.video.content.videohash,
+                                    url: url: videos[i].meta.video.content.video480hash ? linkByHash(videos[i].meta.video.content.video480hash) : linkByHash(videos[i].meta.video.content.videohash),
                                     name: user.name,
                                     title: videos[i].title,
                                     isFree: true,
