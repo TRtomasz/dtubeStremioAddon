@@ -35,6 +35,26 @@ var dataset = {
 
 };
 
+  gateways = [
+    "https://ipfs.io",
+    "https://dtube1.gateway.ipfsstore.it:8443",
+    "https://dtube2.gateway.ipfsstore.it:8443",
+    "https://gateway.ipfs.io",
+    "https://earth.i.ipfs.io",
+    "https://gateway.ipfsstore.it:8443",
+    "https://scrappy.i.ipfs.io",
+    "https://chappy.i.ipfs.io"
+  ];
+   function gatewayByHash(ipfsHash) {
+    var g = ipfsHash.charCodeAt(ipfsHash.length-1) % gateways.length
+    return gateways[g].split('://')[1]
+  }
+
+  function linkByHash(ipfsHash) {
+    return 'https://'+gatewayByHash(ipfsHash)+'/ipfs/'+ipfsHash
+  }
+
+
 var methods = { };
 function getVideoByIdWithCallback(id,callback)
 {
@@ -54,7 +74,7 @@ function getVideoByIdWithCallback(id,callback)
                                 thumbnail: 'https://dtube2.gateway.ipfsstore.it:8443/ipfs/'+videos[0].meta.video.info.snaphash,
                                 stream: 
                                 {
-                                    url: 'https://scrappy.i.ipfs.io/ipfs/'+videos[0].meta.video.content.videohash,
+                                    url: linkByHash(videos[0].meta.video.content.videohash),
                                     name: videos[0].author,
                                     title: videos[0].title,
                                     isFree: true,
