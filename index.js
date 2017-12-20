@@ -126,7 +126,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
                                 thumbnail: 'https://dtube2.gateway.ipfsstore.it:8443/ipfs/'+videos[i].meta.video.info.snaphash,
                                 stream: 
                                 {
-                                    url: url: videos[i].meta.video.content.video480hash ? linkByHash(videos[i].meta.video.content.video480hash) : linkByHash(videos[i].meta.video.content.videohash),
+                                    url: videos[i].meta.video.content.video480hash ? linkByHash(videos[i].meta.video.content.video480hash) : linkByHash(videos[i].meta.video.content.videohash),
                                     name: user.name,
                                     title: videos[i].title,
                                     isFree: true,
