@@ -78,10 +78,7 @@ function getVideoByIdWithCallback(id,callback)
                                     name: videos[0].author,
                                     title: videos[0].title,
                                     isFree: true,
-                                    availability: 0,
-                                    widgetSidebar: "d.tube",
-                                    widgetPlayer: "d.tube",
-                                    widgetPlayerStates: ["paused", "replaceplayer"]
+                                    availability: 0
                                 },
                                 overview: videos[0].summary
                             };
