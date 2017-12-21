@@ -78,8 +78,7 @@ function getVideoByIdWithCallback(id,callback)
                                     name: videos[0].author,
                                     title: videos[0].title,
                                     isFree: true,
-                                    availability: 0,
-                                    widgetPlayer: "www.onet.pl"
+                                    availability: 0
                                 },
                                 overview: videos[0].summary
                             };
