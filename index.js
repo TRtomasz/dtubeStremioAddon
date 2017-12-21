@@ -81,7 +81,7 @@ function getVideoByIdWithCallback(id,callback)
                                     availability: 0,
                                     widgetSidebar: "www.google.pl",
                                     widgetPlayer: "www.onet.pl",
-                                    widgetPlayerStates: ["paused"]
+                                    widgetPlayerStates: ["paused", "replaceplayer"]
                                 },
                                 overview: videos[0].summary
                             };
