@@ -79,6 +79,7 @@ function getVideoByIdWithCallback(id,callback)
                                     title: videos[0].title,
                                     isFree: true,
                                     availability: 0,
+                                    widgetSidebar: "www.google.pl",
                                     widgetPlayer: "www.onet.pl",
                                     widgetPlayerStates: ["paused"]
                                 },
