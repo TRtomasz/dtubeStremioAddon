@@ -79,7 +79,7 @@ function getVideoByIdWithCallback(id,callback)
                                     title: videos[0].title,
                                     isFree: true,
                                     availability: 0,
-                                    widgetPlayer: "www.google.com"
+                                    widgetPlayer: "www.onet.pl"
                                 },
                                 overview: videos[0].summary
                             };
