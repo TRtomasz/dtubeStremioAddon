@@ -174,6 +174,8 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             }
             else
                 var meta = { profile: { profile_image: "", cover_image: "", about: ""}};
+            if (typeof meta.profile === "undefined")
+                meta.profile = {about: ""};
             user.id = "dtube_id:"+data.name;
             user.name = data.name;
             user.poster = 'https://img.busy.org/'+'@'+data.name;
