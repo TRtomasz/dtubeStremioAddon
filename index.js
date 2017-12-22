@@ -182,7 +182,7 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             user.background = 'https://img.busy.org/'+'@'+data.name+'/cover';
             user.website = "www.steemit.com/@"+data.name,
             user.genre = ["Entertainment"];
-            user.description = "Visit me at " + "www.steemit.com/@"+data.name + " "+ meta.profile.about;
+            user.description = "Visit me at " + "www.steemit.com/@"+data.name + " "+ (meta.profile.about || ":)");
             user.isFree = 1;
             user.popularity = data.reputation;
             user.popularities = {dTube: data.reputation};
