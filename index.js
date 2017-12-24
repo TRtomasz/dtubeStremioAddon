@@ -14,7 +14,7 @@ var manifest = {
 
     name: "dTube",
      version: "1.0.0",
-    description: "dTube addon for stremio - monetize your videos with steem blockchain",
+    description: "dTube addon for stremio - monetize your videos with steem blockchain Join us at www.steemit.com",
     //icon: "https://d.tube/DTube_files/images/dtubeplay.png",
     logo: "https://d.tube/DTube_files/images/dtubeplay.png",
     background: "https://image.ibb.co/buY5nw/Screenshot_3.png",
