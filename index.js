@@ -13,7 +13,7 @@ var manifest = {
     id: "org.stremio.dtube",
 
     name: "dTube",
-     version: "1.0.1",
+     version: "1.0.2",
     description: "dTube addon for stremio - monetize your videos with steem blockchain Join us at www.steemit.com",
     //icon: "https://d.tube/DTube_files/images/dtubeplay.png",
     logo: "https://d.tube/DTube_files/images/dtubeplay.png",
@@ -244,7 +244,7 @@ var addon = new Stremio.Server({
         console.log("received request from meta.find", args)
         var page = ((args.skip || 0))/10 + 1;
         console.log("Page ", page);
-        loadPaginatedUsersWith([],page,70,callback);
+        loadPaginatedUsersWith([],page,71,callback);
     },
     "meta.get": function(args, callback) {
         console.log("received request from meta.get", args, args.query.dtube_id);
