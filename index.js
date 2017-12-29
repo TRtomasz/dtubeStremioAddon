@@ -237,6 +237,7 @@ function loadPaginatedUsersWith(usersList,page,maxAmount,callback)
 var addon = new Stremio.Server({
     "stream.find": function(args, callback) {
         console.log("received request from stream.find", args);
+        if (! args.query) return callback();
         getVideoByIdWithCallback(args.query.video_id,callback);
     },
     "meta.find": function(args, callback) {
@@ -245,6 +246,7 @@ var addon = new Stremio.Server({
     },
     "meta.get": function(args, callback) {
         console.log("received request from meta.get", args, args.query.dtube_id);
+        if (! args.query) return callback();
         createChannelFromAuthorName([args.query.dtube_id],callback,false,false);
     },
     "meta.search": function(args, callback) {
