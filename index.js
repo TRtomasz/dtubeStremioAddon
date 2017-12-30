@@ -13,7 +13,7 @@ var manifest = {
     id: "org.stremio.dtube",
 
     name: "dTube",
-     version: "1.0.2",
+     version: "1.0.3",
     description: "dTube addon for stremio - monetize your videos with steem blockchain Join us at www.steemit.com",
     //icon: "https://d.tube/DTube_files/images/dtubeplay.png",
     logo: "https://d.tube/DTube_files/images/dtubeplay.png",
@@ -264,8 +264,8 @@ if (require.main===module) var server = require("http").createServer(function (r
 }).on("listening", function()
 {
     var port = server.address().port;
-    console.log("Sample Stremio Addon listening on "+port);
-    console.log("You can test this add-on via the web app at: http://app.strem.io/#/discover/channel?addon="+encodeURIComponent('http://localhost:'+port))
+    console.log("dtube Stremio Addon listening on "+port);
+    console.log("starting")
 }).listen(process.env.PORT || 7000);
 
 // Export for local usage
