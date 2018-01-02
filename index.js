@@ -245,7 +245,7 @@ var addon = new Stremio.Server({
         if (! args.query) return callback(new Error("no query"));
         var page = ((args.skip || 0))/10 + 1;
         console.log("Page ", page);
-        loadPaginatedUsersWith([],page,100,callback);
+        loadPaginatedUsersWith([],page,70,callback);
     },
     "meta.get": function(args, callback) {
         console.log("received request from meta.get", args, args.query.dtube_id);
