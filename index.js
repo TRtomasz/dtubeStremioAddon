@@ -108,6 +108,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
             callback(null,users);
         }
         else{
+            console.log("pushing");
             users[0].videos.push({
                 id: 'testid',
                 title: 'testtitle',
@@ -120,6 +121,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
                         availability: 0},
                         overview: 'testowe wideo'}
             });
+            console.log(users[0]);
             callback(null,users[0]);
         }
     }
