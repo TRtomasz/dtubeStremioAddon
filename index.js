@@ -209,17 +209,6 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             user.popularities = {dTube: data.reputation};
             user.type = "channel";
             user.videos = [];
-            client.hgetall(data.name, function(err,object){
-                if(object)
-                {
-                    console.log("objekt ", object);
-                }
-                else
-                {
-                               client.hmset(data.name,JSON.stringify(user)); 
-                }
-            });
-
             users.push(user);
         }
         if(!returnArr){
@@ -232,7 +221,7 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             });
             if(!search){
                 callback(null,users);
-                }
+
             }
             else{
                 callback(null,{query: users[0].name, results: users});
