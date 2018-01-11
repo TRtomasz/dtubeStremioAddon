@@ -2,7 +2,7 @@ var Stremio = require("stremio-addons");
 var https = require('https');
 var request = require('request');
 var steemjs = require('steem');
-var client = require('redis').createClient(process.env.REDIS_URL);
+//var client = require('redis').createClient(process.env.REDIS_URL);
 steemjs.api.setOptions({ url: 'wss://steemd-int.steemit.com' });
 
 // Enable server logging for development purposes
@@ -55,9 +55,9 @@ var dataset = {
     return 'https://'+gatewayByHash(ipfsHash)+'/ipfs/'+ipfsHash
   }
 
-client.on('connect', function() {
-    console.log('connected');
-});
+//client.on('connect', function() {
+ //   console.log('connected');
+//});
 
 var methods = { };
 function getVideoByIdWithCallback(id,callback)
