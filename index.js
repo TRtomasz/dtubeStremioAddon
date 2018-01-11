@@ -2,6 +2,7 @@ var Stremio = require("stremio-addons");
 var https = require('https');
 var request = require('request');
 var steemjs = require('steem');
+var client = require('redis').createClient(process.env.REDIS_URL);
 steemjs.api.setOptions({ url: 'wss://steemd-int.steemit.com' });
 
 // Enable server logging for development purposes
@@ -54,6 +55,9 @@ var dataset = {
     return 'https://'+gatewayByHash(ipfsHash)+'/ipfs/'+ipfsHash
   }
 
+client.on('connect', function() {
+    console.log('connected');
+});
 
 var methods = { };
 function getVideoByIdWithCallback(id,callback)
@@ -103,8 +107,21 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
             })
             callback(null,users);
         }
-        else
+        else{
+            users[0].videos.push({
+                id: 'testid',
+                title: 'testtitle',
+                publishedAt: new Date(),
+                tumbnail: 'https://ipfs.io/ipfs/QmVdHstyPjpXp4dEz3DiBKC1fjSxM6TRRgoAC3Vgc8ga2W',
+                stream: {url: 'blob:https://www.dlive.io/39303b88-8302-4e46-87da-bcbf036f32bf',
+                        name: 'namename',
+                        title: 'titltetle',
+                        isFree: true,
+                        availability: 0},
+                        overview: 'testowe wideo'}
+            });
             callback(null,users[0]);
+        }
     }
     else {
     var req = `https://api.asksteem.com/search?q=author:${users[counter].name}+AND+tags:dtube+AND+meta.video.info.title:*&types=post&include=meta&sort_by=created&order=desc&pg=${page}`;
@@ -190,6 +207,17 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             user.popularities = {dTube: data.reputation};
             user.type = "channel";
             user.videos = [];
+            client.hgetall(data.name, function(err,object){
+                if(object)
+                {
+                    console.log("objekt ", object);
+                }
+                else
+                {
+                               client.hmset(data.name,JSON.stringify(user)); 
+                }
+            });
+
             users.push(user);
         }
         if(!returnArr){
@@ -200,8 +228,10 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             users.sort(function(a,b){
                 return b.popularity - a.popularity;
             });
-            if(!search)
+            if(!search){
                 callback(null,users);
+                }
+            }
             else{
                 callback(null,{query: users[0].name, results: users});
             }

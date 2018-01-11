@@ -5,9 +5,13 @@
   "main": "index.js",
   "author": "eraplusidea@gmail.com",
   "license": "MIT",
-  "scripts": {"start": "node index.js"},
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "asksteem": "0.0.7",
+    "flat": "^4.0.0",
+    "redis": "^2.8.0",
     "request": "^2.83.0",
     "steem": "^0.6.7",
     "steemjs": "^1.0.4",
