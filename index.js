@@ -114,7 +114,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
                 title: 'testtitle',
                 publishedAt: new Date(),
                 tumbnail: 'https://ipfs.io/ipfs/QmVdHstyPjpXp4dEz3DiBKC1fjSxM6TRRgoAC3Vgc8ga2W',
-                stream: {url: 'blob:https://www.dlive.io/39303b88-8302-4e46-87da-bcbf036f32bf/',
+                stream: {url: 'blob:https://www.dlive.io/8fbc11cc-2125-4faa-8427-467af0a1aea7/hls.m3u8',
                         name: 'namename',
                         title: 'titltetle',
                         isFree: true,
