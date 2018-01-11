@@ -119,7 +119,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
                         title: 'titltetle',
                         isFree: true,
                         availability: 0},
-                        overview: 'testowe wideo'}
+                        overview: 'testowe wideo'
             });
             console.log(users[0]);
             callback(null,users[0]);
