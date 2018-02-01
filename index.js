@@ -75,7 +75,7 @@ function getVideoByIdWithCallback(id,callback)
                                 id: videos[0].meta.video._id,
                                 title: videos[0].title,
                                 publishedAt: new Date(videos[0].created),
-                                thumbnail: 'https://dtube2.gateway.ipfsstore.it:8443/ipfs/'+videos[0].meta.video.info.snaphash,
+                                thumbnail: 'https://snap1.d.tube/ipfs/'+videos[0].meta.video.info.snaphash,
                                 stream: 
                                 {
                                     url: videos[0].meta.video.content.video480hash ? linkByHash(videos[0].meta.video.content.video480hash) : linkByHash(videos[0].meta.video.content.videohash),
