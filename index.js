@@ -128,7 +128,7 @@ function loadPaginatedVideos(users,counter,callback,page,maxAmount,returnArr)
                                 id: videos[i].meta.video._id,
                                 title: videos[i].title,
                                 publishedAt: new Date(videos[i].created),
-                                thumbnail: 'https://snap1.d.tube/ipfs/ipfs/'+videos[i].meta.video.info.snaphash,
+                                thumbnail: 'https://snap1.d.tube/ipfs/'+videos[i].meta.video.info.snaphash,
                                 stream: 
                                 {
                                     url: videos[i].meta.video.content.video480hash ? linkByHash(videos[i].meta.video.content.video480hash) : linkByHash(videos[i].meta.video.content.videohash),
