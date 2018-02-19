@@ -36,16 +36,13 @@ var dataset = {
 
 };
 
-  gateways = [
-    "https://ipfs.io",
-    "https://dtube1.gateway.ipfsstore.it:8443",
-    "https://dtube2.gateway.ipfsstore.it:8443",
-    "https://gateway.ipfs.io",
-    "https://earth.i.ipfs.io",
-    "https://gateway.ipfsstore.it:8443",
-    "https://scrappy.i.ipfs.io",
-    "https://chappy.i.ipfs.io"
-  ];
+gateways = [
+      "https://ipfs.infura.io",
+      "https://ipfs.io",
+      "https://gateway.ipfs.io",
+      "https://scrappy.i.ipfs.io",
+      "https://chappy.i.ipfs.io"
+    ];
    function gatewayByHash(ipfsHash) {
     var g = ipfsHash.charCodeAt(ipfsHash.length-1) % gateways.length
     return gateways[g].split('://')[1]
@@ -89,7 +86,7 @@ function getVideoByIdWithCallback(id,callback)
                 callback(null,[video.stream]);
             }
             else
-                callback(null,[]);
+                callback(null,[]);3
         }
         else
         {
