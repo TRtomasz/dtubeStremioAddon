@@ -3,7 +3,7 @@ var https = require('https');
 var request = require('request');
 var steemjs = require('steem');
 //var client = require('redis').createClient(process.env.REDIS_URL);
-steemjs.api.setOptions({ url: 'wss://steemd-int.steemit.com' });
+steemjs.api.setOptions({ url: 'wss://api.steemit.com' });
 
 // Enable server logging for development purposes
 process.env.STREMIO_LOGGING = true; 
