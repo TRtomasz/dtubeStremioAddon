@@ -3,7 +3,7 @@ var https = require('https');
 var request = require('request');
 var steemjs = require('steem');
 //var client = require('redis').createClient(process.env.REDIS_URL);
-steemjs.api.setOptions({ url: 'wss://api.steemit.com' });
+steemjs.api.setOptions({ url: 'https://api.steemit.com' });
 
 // Enable server logging for development purposes
 process.env.STREMIO_LOGGING = true; 
@@ -163,7 +163,7 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
 {
     console.log(author.length);
     var users = [];
-    steemjs.api.setOptions({ url: 'wss://api.steemit.com' });
+    steemjs.api.setOptions({ url: 'https://api.steemit.com' });
     steemjs.api.getAccounts(author, function(err,result){
         if(!err) {
             if (result.length == 0)
