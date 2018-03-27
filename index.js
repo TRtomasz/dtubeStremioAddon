@@ -182,7 +182,7 @@ function createChannelFromAuthorName(author, callback, returnArr,search)
             user.name = data.name;
             user.poster = 'https://img.busy.org/'+'@'+data.name;
             user.posterShape = "regular";
-            user.banner = 'https://img.busy.org/'+'@'+data.name;
+            user.banner = meta.profile.cover_image;
             user.background = 'https://img.busy.org/'+'@'+data.name+'/cover';
             user.website = "www.steemit.com/@"+data.name,
             user.genre = ["Entertainment"];
