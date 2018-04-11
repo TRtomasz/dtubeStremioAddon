@@ -17,7 +17,7 @@ var manifest = {
      version: "1.0.3",
     description: "dTube addon for stremio - monetize your videos with steem blockchain Join us at www.steemit.com",
     //icon: "https://d.tube/DTube_files/images/dtubeplay.png",
-    logo: "https://d.tube/DTube_files/images/DTube_Black.svg",
+    logo: "https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dtU1DqYmBaYQYiw5o62hm7j7qCWsb_1680x8400",
     background: "https://image.ibb.co/buY5nw/Screenshot_3.png",
     contactEmail: "steem@steem.com",
     // Properties that determine when Stremio picks this add-on
