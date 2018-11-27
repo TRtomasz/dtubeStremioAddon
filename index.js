@@ -6,7 +6,8 @@ var steemjs = require('steem');
 steemjs.api.setOptions({ url: 'https://api.steemit.com' });
 
 // Enable server logging for development purposes
-process.env.STREMIO_LOGGING = true; 
+process.env.STREMIO_LOGGING = true;
+//ok
 
 // Define manifest object
 var manifest = { 
