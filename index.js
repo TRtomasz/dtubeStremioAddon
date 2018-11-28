@@ -26,7 +26,7 @@ var manifest = {
     idProperty: ["dtube_id"], // the property to use as an ID for your add-on; your add-on will be preferred for items with that property; can be an array
     // We need this for pre-4.0 Stremio, it's the obsolete equivalent of types/idProperty
     filter: { "query.dtube_id": { "$exists": true }, "query.type": { "$in": ["channel"] } },
-    endpoint : "http://secret-anchorage-23982.herokuapp.com/stremioget/stremio/v1",
+    //endpoint : "http://secret-anchorage-23982.herokuapp.com/stremioget/stremio/v1",
     // Adding a sort would add a tab in Discover and a lane in the Board for this add-on
     sorts: [ {prop: "popularities.dtube", name: "dTube", types: ["channel"]}],
     listedOn: ["web", "desktop", "android", "ios"],
@@ -46,7 +46,7 @@ gateways = [
     ];
    function gatewayByHash(ipfsHash) {
     var g = ipfsHash.charCodeAt(ipfsHash.length-1) % gateways.length
-    return gateways[g].split('://')[1]
+    return 'video.dtube.top'
   }
 
   function linkByHash(ipfsHash) {
@@ -265,6 +265,11 @@ var addon = new Stremio.Server({
 }, manifest);
 
 if (require.main===module) var server = require("http").createServer(function (req, res) {
+    //needed only for the local add-on
+    /*res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Request-Method', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+    res.setHeader('Access-Control-Allow-Headers', '*');*/
     addon.middleware(req, res, function() { res.end() }); // wire the middleware - also compatible with connect / express
 }).on("listening", function()
 {
